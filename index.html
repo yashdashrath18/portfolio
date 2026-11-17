@@ -1,0 +1,1167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="description" content="Yash Dashrath, a creative developer, photographer and video editor in Pune. RoomSync, Harvest Lane 3D, student software, Yash MediaWorks and creative experiments." />
+<link rel="icon" href="data:," />
+<title>Yash Dashrath | Hi, I'm Yash. I Build Things. I Create Stories.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0a0a0c;--bg2:#101014;--panel:#131318;--panel2:#17171f;--ink:#f5f2ec;--muted:#a3a3b0;--muted2:#c9c9d2;--line:#26262e;--line2:#3a3a46;--accent:#8b5cf6;--accent2:#a78bfa;--accent-soft:rgba(139,92,246,.16);--violet:#7c3aed;--cream:#f2efe8;--radius:4px;color-scheme:dark}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;overflow-x:clip}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--accent);color:#fff}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:0;text-transform:none}
+  .skip{position:absolute;top:0;left:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;background:var(--accent);color:#fff;font-weight:700;z-index:100}
+  .skip:focus{width:auto;height:auto;clip:auto;clip-path:none;padding:12px 16px;position:fixed;top:12px;left:12px}
+  .grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+  .preloader{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:transform .65s cubic-bezier(.76,0,.24,1),visibility .65s}
+  .preloader.done{transform:translateY(-100%);visibility:hidden}
+  .preloader-mark{font-weight:900;font-size:clamp(46px,8vw,72px);letter-spacing:-.04em;line-height:1}
+  .preloader-mark i{font-style:normal;color:var(--accent2)}
+  .preloader-bar{width:min(220px,60vw);height:2px;background:var(--line2);overflow:hidden}
+  .preloader-bar i{display:block;height:100%;width:40%;background:var(--accent);animation:preload 1s ease-in-out infinite}
+  @keyframes preload{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+  .preloader-label{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:80;border-radius:50%;display:none}
+  .cursor-dot{width:8px;height:8px;background:var(--accent2);transform:translate(-50%,-50%)}
+  .cursor-ring{width:38px;height:38px;border:1px solid rgba(167,139,250,.75);transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,background .25s ease}
+  .cursor-ring.is-hover{width:64px;height:64px;background:rgba(139,92,246,.14)}
+  @media (pointer:fine){body.has-cursor,.has-cursor a,.has-cursor button{cursor:none}.cursor-dot,.cursor-ring{display:block}}
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:70;transform-origin:0 50%;transform:scaleX(0);background:var(--accent);will-change:transform}
+  nav{position:fixed;top:0;left:0;right:0;max-width:100vw;z-index:50;background:rgba(10,10,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+  .nav-mark{text-decoration:none;font-weight:900;font-size:19px;letter-spacing:-.02em;white-space:nowrap}
+  .nav-mark i{font-style:normal;color:var(--accent2)}
+  .nav-links{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end;align-items:center}
+  .nav-links a{text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted2);padding:9px 11px}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a.cta{color:#fff;background:var(--violet);font-weight:600;margin-left:6px;border-radius:var(--radius)}
+  .nav-links a.cta:hover{background:var(--accent)}
+  .nav-toggle{display:none;background:none;border:1px solid var(--line2);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border-radius:var(--radius)}
+  main{padding-top:64px}
+  .reveal{opacity:1;transform:none}
+  .reveal.in{animation:riseIn .7s cubic-bezier(.22,1,.36,1) both}
+  @keyframes riseIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  /* SCROLL ANIMATION — progressive enhancement. Hidden states exist only under
+     html.js-anim, which JS adds only after confirming IntersectionObserver and
+     requestAnimationFrame are available and reduced motion is off. Without JS,
+     or with a blocked CDN, every block below stays fully visible. */
+  html.js-anim .reveal.in{animation:none}
+  html.js-anim .anim{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1);transition-delay:var(--d,0ms);will-change:opacity,transform}
+  html.js-anim .anim.in{opacity:1;transform:translateY(0);will-change:auto}
+  html.js-anim .work-item:not(.in) .work-media{opacity:0;transform:scale(.985)}
+  html.js-anim .work-media{transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);transition-delay:120ms}
+  html.js-anim .work-media img{transform:translate3d(0,var(--py,0px),0) scale(1.07);transition:transform .35s ease-out;will-change:transform}
+  html.js-anim .work-item:hover .work-media img{transform:translate3d(0,var(--py,0px),0) scale(1.11)}
+  html.js-anim .reel-stage:not(.in) .reel-inner{opacity:0}
+  html.js-anim .reel-inner{transform:translate3d(0,var(--py,0px),0);transition:opacity .85s cubic-bezier(.22,1,.36,1);transition-delay:120ms;will-change:transform,opacity}
+  html.js-anim .stage,html.js-anim .foot-big{will-change:transform}
+  @media (max-width:600px){html.js-anim .anim{transform:translateY(20px)}}
+  @media print{html.js-anim .anim{opacity:1 !important;transform:none !important}html.js-anim .work-item:not(.in) .work-media,html.js-anim .reel-stage:not(.in) .reel-inner{opacity:1 !important;transform:none !important}html.js-anim .work-media img,html.js-anim .reel-inner{transform:none !important}}
+
+  /* HERO */
+  .hero{position:relative;padding:56px 0 0;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}
+  .hero-status{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line2);background:var(--panel);padding:8px 13px;border-radius:999px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);margin:0 0 24px}
+  .hero-status i{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 5px rgba(139,92,246,.18);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 9px rgba(139,92,246,.07)}}
+  h1{font-size:clamp(64px,10.5vw,142px);line-height:.88;letter-spacing:-.045em;text-transform:uppercase;margin:0;font-weight:900}
+  h1 .yash{color:var(--accent2)}
+  h1 .dot{color:var(--accent)}
+  .hero-line{display:block;overflow:hidden}
+  .hero-line > span{display:block;animation:rise .9s cubic-bezier(.22,1,.36,1) both}
+  .hero-line:nth-child(2) > span{animation-delay:.12s}
+  @keyframes rise{from{transform:translateY(105%)}to{transform:translateY(0)}}
+  .hero-claim{font-size:clamp(21px,2.8vw,32px);line-height:1.15;font-weight:800;letter-spacing:-.02em;text-transform:uppercase;margin:26px 0 0;max-width:620px}
+  .hero-claim .serif{font-size:1.06em;letter-spacing:0;text-transform:none;font-weight:400}
+  .hero-claim em{font-style:normal;color:var(--accent2)}
+  .hero-intro{color:var(--muted);font-size:18px;max-width:560px;margin:18px 0 0}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 26px}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:15px 22px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:var(--radius);cursor:pointer}
+  .btn:hover{background:var(--accent2);border-color:var(--accent2);color:#14101f}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2)}
+  .btn.ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink)}
+  .btn.violet{background:var(--violet);border-color:var(--violet);color:#fff}
+  .btn.violet:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .hero-social{display:flex;gap:18px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .hero-social a{text-decoration:none}
+  .hero-social a:hover{color:var(--accent2);text-decoration:underline;text-underline-offset:4px}
+  .hero-meta{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.9;color:var(--muted)}
+  .hero-meta b{color:var(--ink);font-weight:600}
+  .stage{position:relative;perspective:900px}
+  .stage-frame{position:relative;border:1px solid var(--line);background:var(--panel);overflow:hidden;transform-style:preserve-3d;transition:transform .2s ease-out}
+  .stage-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 320px at 68% 30%,rgba(139,92,246,.30),transparent 68%);pointer-events:none}
+  .stage-frame img{position:relative;width:100%;height:auto;display:block;aspect-ratio:1/1;object-fit:cover;object-position:center 22%}
+  .stage-cap{position:relative;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);background:rgba(10,10,12,.72);border:1px solid var(--line);padding:10px 12px;border-radius:var(--radius)}
+  .stage-cap b{color:var(--accent2);font-weight:600}
+  .float-chip{position:absolute;z-index:2;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;background:var(--bg);border:1px solid var(--line2);padding:9px 12px;border-radius:999px;box-shadow:0 14px 30px rgba(0,0,0,.35);pointer-events:none;white-space:nowrap}
+  .float-chip b{color:var(--accent2)}
+  .chip-a{top:14px;left:12px}.chip-b{top:38%;right:12px}.chip-c{bottom:72px;left:12px}
+  .scroll-cue{display:flex;align-items:center;gap:14px;padding:26px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .scroll-cue a{color:var(--ink);text-decoration:none;font-weight:600}
+  .scroll-cue a:hover{color:var(--accent2)}
+  .scroll-cue i{display:block;width:1px;height:44px;background:var(--line2);position:relative;overflow:hidden}
+  .scroll-cue i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--accent);animation:cue 1.8s cubic-bezier(.76,0,.24,1) infinite}
+  @keyframes cue{0%{top:-100%}55%{top:0}100%{top:100%}}
+  .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;contain:paint;margin-top:52px;white-space:nowrap}
+  .marquee-track{display:inline-flex;width:max-content;animation:marquee 30s linear infinite;padding:13px 0}
+  .marquee-track span{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-right:28px}
+  .marquee-track span b{color:var(--accent2);font-weight:400;padding-right:28px}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  section{padding:104px 0 8px;scroll-margin-top:78px}
+  .sec-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:38px}
+  .sec-index{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:10px;margin:0 0 12px}
+  .sec-index b{color:var(--accent2);font-weight:600}
+  h2{font-size:clamp(38px,6vw,72px);line-height:.95;letter-spacing:-.035em;text-transform:uppercase;margin:0;font-weight:900;max-width:920px}
+  h2 .serif{letter-spacing:-.01em;text-transform:none;font-weight:400}
+  h2 .violet-word{color:var(--accent2)}
+  .sec-note{color:var(--muted);max-width:400px;margin:0;font-size:16px}
+  .rule{height:1px;background:var(--line);margin:0 0 42px}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.45fr .55fr;gap:48px;align-items:start;position:relative}
+  .about-copy p{font-size:clamp(21px,2.6vw,28px);line-height:1.42;font-weight:600;letter-spacing:-.01em;margin:0 0 26px;max-width:820px}
+  .about-copy p.small{font-size:17px;line-height:1.65;font-weight:400;color:var(--muted);max-width:720px}
+  .about-copy p.small strong{color:var(--ink)}
+  .about-copy .serif{font-size:1.06em}
+  .about-facts{border:1px solid var(--line);background:var(--panel);margin:0;position:relative}
+  .about-facts::before{content:"";position:absolute;top:-9px;right:22px;width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(139,92,246,.18)}
+  .about-facts div{padding:20px 22px;border-bottom:1px solid var(--line)}
+  .about-facts div:last-child{border-bottom:0}
+  .about-facts dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .about-facts dd{margin:0;font-weight:700;font-size:16.5px;line-height:1.45}
+  .interests{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:44px}
+  .interest{border:1px solid var(--line);background:var(--panel);padding:20px 18px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+  .interest:hover{transform:translateY(-4px) rotate(-.4deg);border-color:var(--accent);background:var(--panel2)}
+  .interest b{font-size:17px;line-height:1.25;letter-spacing:-.01em}
+  .interest span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .interest span i{font-style:normal;color:var(--accent2)}
+
+  /* WHAT I DO */
+  .services{border-top:1px solid var(--line)}
+  .svc{border-bottom:1px solid var(--line)}
+  .svc-btn{width:100%;background:none;border:0;color:var(--ink);text-align:left;padding:28px 6px;display:grid;grid-template-columns:72px 1fr auto 52px;gap:20px;align-items:center;font:inherit;cursor:pointer}
+  .svc-num{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--accent2);font-weight:600}
+  .svc-title{font-size:clamp(26px,4.2vw,46px);font-weight:900;letter-spacing:-.03em;line-height:1;text-transform:uppercase}
+  .svc-title em{font-family:"Instrument Serif",serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+  .svc-btn:hover .svc-title{color:var(--accent2)}
+  .svc-tag{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);text-align:right;max-width:280px;line-height:1.6}
+  .svc-plus{font-size:30px;font-weight:400;line-height:1;width:46px;height:46px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;flex:none;transition:transform .3s ease,background .3s ease}
+  .svc-btn[aria-expanded="true"] .svc-plus{transform:rotate(45deg);background:var(--accent);color:#fff;border-color:var(--accent)}
+  .svc-panel{display:none;padding:0 6px 30px 92px;max-width:880px}
+  .svc-panel.open{display:block}
+  .svc-panel p{margin:0 0 12px;color:var(--muted);font-size:16.5px}
+  .svc-panel p strong{color:var(--ink)}
+  .svc-panel .mono{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .svc-panel .mono b{color:var(--accent2);font-weight:600}
+
+  /* WORK */
+  .work-grid12{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+  .work-item{border:1px solid var(--line);background:var(--panel);padding:0 0 26px;overflow:hidden;transition:border-color .25s ease}
+  .work-item:hover{border-color:var(--line2)}
+  .work-item.span7{grid-column:span 7}
+  .work-item.span5{grid-column:span 5}
+  .work-item.span6{grid-column:span 6}
+  .work-item.span4{grid-column:span 4}
+  .work-item.span8{grid-column:span 8}
+  .work-pad{padding:26px 26px 0}
+  .work-meta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  .work-meta .num{color:var(--accent2);font-weight:600}
+  .status{display:inline-flex;align-items:center;gap:8px;color:var(--ink);border:1px solid var(--line2);padding:5px 11px;border-radius:999px}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent2)}
+  .status.dev::before{background:#e8b45a}
+  .work-title{font-size:clamp(30px,3.6vw,46px);line-height:.98;letter-spacing:-.03em;text-transform:uppercase;margin:0 0 10px;font-weight:900}
+  .work-title .serif{text-transform:none;letter-spacing:-.01em;font-weight:400}
+  .work-lede{color:var(--muted2);font-size:16px;line-height:1.6;margin:0 0 20px;max-width:640px}
+  .work-media{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;position:relative}
+  .work-media img{width:100%;height:360px;object-fit:cover;object-position:center;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+  .work-item:hover .work-media img{transform:scale(1.03)}
+  .work-media.tall img{height:430px;object-position:top center}
+  .work-media.cream{background:var(--cream);display:grid;place-items:center}
+  .work-media.cream img{height:300px;object-fit:contain;padding:26px}
+  .work-media .view-tag{position:absolute;right:14px;bottom:14px;background:var(--violet);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;opacity:0;transform:translateY(6px);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
+  .work-media:hover .view-tag{opacity:1;transform:translateY(0)}
+  .code-panel{padding:26px;font-family:"IBM Plex Mono",monospace;font-size:13.5px;line-height:1.7;background:var(--panel);color:#d9d9e3;overflow-x:hidden;white-space:pre-wrap;word-break:break-word}
+  .code-panel .dim{color:#7d7d92}
+  .code-panel .key{color:var(--accent2)}
+  .beam-panel{padding:38px 26px;background:var(--panel2);display:flex;flex-direction:column;gap:18px;justify-content:center;min-height:250px}
+  .beam{display:flex;align-items:center;gap:14px;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600}
+  .beam i{flex:1;height:2px;background:var(--accent2);position:relative;display:block}
+  .beam i::after{content:"";position:absolute;right:-5px;top:-5px;width:12px;height:12px;border-radius:50%;background:#e8b45a;box-shadow:0 0 0 6px rgba(232,180,90,.18)}
+  .beam span{border:1px solid var(--line2);background:var(--bg);padding:9px 12px;border-radius:var(--radius)}
+  .film-panel{padding:26px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:var(--panel2)}
+  .film-frame{aspect-ratio:4/3;border:1px solid var(--line2);background:var(--bg);display:flex;flex-direction:column;justify-content:space-between;padding:14px;position:relative;overflow:hidden}
+  .film-frame::after{content:"";position:absolute;left:0;right:0;top:42%;height:1px;background:rgba(167,139,250,.35)}
+  .film-frame b{font-size:15px;letter-spacing:-.01em}
+  .film-frame span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin:20px 26px 0}
+  .tags span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line2);padding:7px 11px;color:var(--muted2);border-radius:999px}
+  .work-links{display:flex;gap:10px;flex-wrap:wrap;margin:18px 26px 0}
+  .work-links .btn{padding:12px 18px;font-size:12px}
+  .case-btn{margin:18px 26px 0;background:none;border:1px solid var(--line2);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:11px 16px;cursor:pointer;border-radius:var(--radius)}
+  .case-btn:hover{border-color:var(--accent2);color:var(--accent2)}
+  .case-panel{display:none;margin:20px 26px 0;border:1px solid var(--line);background:var(--bg2);padding:22px}
+  .case-panel.open{display:block}
+  .case-panel p{color:var(--muted);margin:0 0 14px;font-size:15px}
+  .case-panel p:last-child{margin-bottom:0}
+  .case-panel p b{display:block;color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:5px}
+
+  /* SHOWREEL */
+  .reel-stage{position:relative;border:1px solid var(--line);background:#050507;overflow:hidden;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;text-align:center}
+  .reel-stage::before{content:"";position:absolute;inset:0;background:radial-gradient(560px 340px at 50% 42%,rgba(139,92,246,.34),transparent 70%)}
+  .reel-stage::after{content:"REC  00:00  16:9";position:absolute;top:16px;left:18px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;color:rgba(245,242,236,.65)}
+  .reel-inner{position:relative;padding:24px}
+  .reel-inner p.kicker{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin:0 0 12px}
+  .reel-inner h3{font-size:clamp(38px,6.5vw,78px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;margin:0;font-weight:900}
+  .reel-inner h3 .serif{text-transform:none;font-weight:400}
+  .reel-inner p.sub{color:var(--muted2);max-width:560px;margin:16px auto 22px}
+  .play-btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;background:var(--violet);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:15px 22px;border-radius:999px}
+  .play-btn:hover{background:var(--accent)}
+  .play-btn i{font-style:normal;width:30px;height:30px;border:1px solid rgba(255,255,255,.6);border-radius:50%;display:grid;place-items:center;font-size:12px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .g-tile{border:1px solid var(--line);background:var(--panel);padding:0;text-align:left;color:var(--ink);cursor:pointer;font:inherit;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+  .g-tile:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .g-frame{aspect-ratio:4/3;position:relative;display:flex;align-items:flex-end;padding:16px;background:var(--panel2);overflow:hidden}
+  .g-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 200px at 70% 25%,rgba(139,92,246,.28),transparent 70%)}
+  .g-frame b{position:relative;font-size:22px;letter-spacing:-.02em;text-transform:uppercase;line-height:1}
+  .g-frame span.cat{position:absolute;top:14px;left:16px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .g-frame span.num{position:absolute;top:14px;right:16px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--accent2)}
+  .g-tile figcaption{padding:13px 16px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+  .g-tile figcaption b{color:var(--ink)}
+  .verticals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  .v-tile{border:1px solid var(--line);background:var(--panel);padding:22px 18px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;transition:transform .25s ease,border-color .25s ease}
+  .v-tile:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .v-tile b{font-size:20px;text-transform:uppercase;letter-spacing:-.02em;line-height:1.15}
+  .v-tile span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .v-tile span i{font-style:normal;color:var(--accent2)}
+  .grade{margin-top:16px;border:1px solid var(--line);background:var(--panel);padding:26px}
+  .grade-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline;margin-bottom:18px}
+  .grade-head h3{margin:0;font-size:24px;letter-spacing:-.02em;text-transform:uppercase}
+  .grade-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:520px}
+  .grade-compare{position:relative;height:220px;border:1px solid var(--line2);overflow:hidden;user-select:none;touch-action:none}
+  .grade-flat,.grade-graded{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase}
+  .grade-flat{background:#3a3a40;color:#d8d8de}
+  .grade-graded{background:#241a3f;color:#fff;clip-path:inset(0 0 0 50%)}
+  .grade-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-1px)}
+  .grade-handle i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:#14101f;display:grid;place-items:center;font-style:normal;font-size:16px;font-weight:700}
+  .grade-note{margin:14px 0 0;color:var(--muted);font-size:14.5px}
+  .lightbox{position:fixed;inset:0;z-index:95;background:rgba(5,5,7,.92);display:none;align-items:center;justify-content:center;padding:24px}
+  .lightbox.open{display:flex}
+  .lightbox-box{max-width:760px;width:100%;border:1px solid var(--line2);background:var(--panel);padding:28px;position:relative}
+  .lightbox-box h3{margin:0 0 8px;font-size:30px;text-transform:uppercase;letter-spacing:-.02em}
+  .lightbox-box p{color:var(--muted);margin:0 0 20px}
+  .lightbox-close{position:absolute;top:12px;right:12px;background:none;border:1px solid var(--line2);color:var(--ink);padding:9px 13px;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:var(--radius)}
+
+  /* TOOLBOX */
+  .toolbox{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:start}
+  .tool-groups{border:1px solid var(--line)}
+  .tool-group{padding:26px;border-bottom:1px solid var(--line)}
+  .tool-group:last-child{border-bottom:0}
+  .tool-group:nth-child(2){background:var(--panel)}
+  .tool-group h3{font-size:20px;margin:0 0 6px;letter-spacing:-.01em;text-transform:uppercase}
+  .tool-group > p{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+  .chips{display:flex;gap:9px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line2);background:var(--bg);color:var(--ink);padding:11px 16px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease}
+  .chip:hover{transform:translateY(-2px);border-color:var(--accent2)}
+  .chip.active{background:var(--violet);border-color:var(--violet);color:#fff}
+  .readout{border:1px solid var(--line);background:var(--panel);padding:26px;position:sticky;top:84px}
+  .readout .mono{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);font-weight:600}
+  .readout h3{margin:10px 0 8px;font-size:30px;letter-spacing:-.02em;text-transform:uppercase}
+  .readout p{color:var(--muted);margin:0;font-size:15.5px}
+  .readout .also{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  .readout .also b{color:var(--ink)}
+
+  /* PROOF */
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+  .proof-cell{padding:28px 26px;border-right:1px solid var(--line)}
+  .proof-cell:last-child{border-right:0}
+  .proof-cell b{display:block;font-size:clamp(38px,4.5vw,54px);line-height:1;letter-spacing:-.04em;font-weight:900}
+  .proof-cell span{display:block;color:var(--muted);font-size:14.5px;line-height:1.5;margin-top:10px}
+  .proof-note{margin-top:20px;color:var(--muted);font-size:15px;max-width:760px}
+  .proof-note strong{color:var(--ink)}
+  .proof-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .proof-card{border:1px solid var(--line);background:var(--panel);padding:22px}
+  .proof-card b{display:block;font-size:19px;margin-bottom:6px;letter-spacing:-.01em}
+  .proof-card p{margin:0;color:var(--muted);font-size:15px}
+
+  /* BEYOND */
+  .collage{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .col-tile{border:1px solid var(--line);background:var(--panel);padding:20px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s ease,background .25s ease}
+  .col-tile:nth-child(1){grid-column:span 3;background:var(--panel2)}
+  .col-tile:nth-child(2){grid-column:span 3}
+  .col-tile:nth-child(3),.col-tile:nth-child(4),.col-tile:nth-child(5),.col-tile:nth-child(6){grid-column:span 3}
+  .col-tile:nth-child(3),.col-tile:nth-child(5){grid-column:span 2}
+  .col-tile:nth-child(4),.col-tile:nth-child(6){grid-column:span 2}
+  .col-tile:hover{transform:translateY(-4px);background:var(--panel2)}
+  .col-tile:nth-child(odd):hover{background:var(--accent-soft)}
+  .col-tile b{font-size:clamp(24px,3vw,34px);text-transform:uppercase;letter-spacing:-.03em;line-height:1}
+  .col-tile b .serif{text-transform:none;font-weight:400}
+  .col-tile p{margin:0;color:var(--muted);font-size:14.5px;max-width:340px}
+  .col-tile span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent2)}
+
+  /* FAQ */
+  .faq{border-top:1px solid var(--line);max-width:860px}
+  .faq-row{border-bottom:1px solid var(--line)}
+  .faq-btn{width:100%;background:none;border:0;color:var(--ink);text-align:left;padding:24px 4px;display:flex;justify-content:space-between;gap:20px;align-items:center;font:inherit;cursor:pointer;font-size:clamp(19px,2.4vw,24px);font-weight:700;letter-spacing:-.01em}
+  .faq-btn:hover{color:var(--accent2)}
+  .faq-btn span.mark{font-size:28px;font-weight:400;flex:none;width:40px;height:40px;border:1px solid var(--line2);border-radius:50%;display:grid;place-items:center;transition:transform .3s ease,background .3s ease}
+  .faq-btn[aria-expanded="true"] span.mark{transform:rotate(45deg);background:var(--accent);color:#fff;border-color:var(--accent)}
+  .faq-panel{display:none;padding:0 4px 26px;color:var(--muted);font-size:16.5px;max-width:720px}
+  .faq-panel.open{display:block}
+  .faq-panel a{color:var(--accent2);font-weight:600}
+
+  /* CONTACT */
+  .contact-block{border:1px solid var(--line);background:var(--panel);padding:clamp(30px,5vw,58px);display:grid;grid-template-columns:1.15fr .85fr;gap:44px}
+  .contact-block h2{margin-bottom:16px}
+  .contact-block > div > p.lede{color:var(--muted);margin:0 0 26px;max-width:520px}
+  .email-line{font-size:clamp(19px,2.8vw,27px);font-weight:800;word-break:break-all;margin:0 0 24px;letter-spacing:-.02em}
+  .email-line a{color:#fff;text-decoration-thickness:2px;text-underline-offset:5px}
+  .email-line a:hover{color:var(--accent2)}
+  #copy-status{margin:14px 0 0;font-size:14.5px;color:var(--muted);min-height:22px}
+  .social{list-style:none;margin:0;padding:0}
+  .social li{border-top:1px solid var(--line2)}
+  .social li:last-child{border-bottom:1px solid var(--line2)}
+  .social a{display:flex;justify-content:space-between;gap:14px;text-decoration:none;padding:14px 2px;font-weight:700}
+  .social a span:last-child{color:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:400}
+  .social a:hover{color:var(--accent2)}
+  .social a:hover span:last-child{color:var(--accent2)}
+  .contact-form{margin-top:44px;border:1px solid var(--line);background:var(--bg2);padding:clamp(24px,4vw,36px)}
+  .contact-form h3{margin:0 0 6px;font-size:24px;text-transform:uppercase;letter-spacing:-.02em}
+  .contact-form > p{margin:0 0 22px;color:var(--muted);font-size:15px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:1/-1}
+  .field label{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .field input,.field textarea{background:var(--bg);border:1px solid var(--line2);color:var(--ink);padding:13px 14px;font:inherit;font-size:16px;border-radius:var(--radius);width:100%}
+  .field textarea{min-height:120px;resize:vertical}
+  .form-foot{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px}
+  .form-note{color:var(--muted);font-size:14px;margin:0}
+  footer{padding:56px 0 60px;border-top:1px solid var(--line);margin-top:104px;overflow:hidden}
+  .foot-top{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+  .foot-name{font-size:clamp(30px,5vw,44px);font-weight:900;letter-spacing:-.03em;text-transform:uppercase;line-height:1;margin:0}
+  .foot-name i{font-style:normal;color:var(--accent2)}
+  .foot-quote{font-family:"Instrument Serif",serif;font-style:italic;font-size:21px;color:var(--muted2);margin:12px 0 0}
+  .foot-meta{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right;line-height:2}
+  .foot-big{font-size:clamp(30px,8.2vw,132px);max-width:100%;overflow:hidden;line-height:.9;font-weight:900;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px #2c2c36;text-transform:uppercase;white-space:nowrap;margin:34px 0 0;user-select:none}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:30px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
+  .foot-bottom a{font-weight:700;color:var(--ink);text-decoration:none}
+  .foot-bottom a:hover{color:var(--accent2)}
+  .to-top{background:none;border:1px solid var(--line2);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:11px 16px;cursor:pointer;border-radius:var(--radius)}
+  .to-top:hover{border-color:var(--accent2);color:var(--accent2)}
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .stage{max-width:560px}
+    .chip-a{left:10px}.chip-b{right:10px}.chip-c{left:10px}
+    .about-grid{grid-template-columns:1fr;gap:28px}
+    .interests{grid-template-columns:repeat(2,1fr)}
+    .work-item.span7,.work-item.span5,.work-item.span6,.work-item.span4,.work-item.span8{grid-column:span 12}
+    .work-media img{height:320px}
+    .work-media.tall img{height:380px}
+    .gallery{grid-template-columns:1fr 1fr}
+    .toolbox{grid-template-columns:1fr}
+    .readout{position:static}
+    .proof-grid{grid-template-columns:1fr 1fr}
+    .proof-cell:nth-child(2){border-right:0}
+    .proof-cell:nth-child(1),.proof-cell:nth-child(2){border-bottom:1px solid var(--line)}
+    .proof-cards{grid-template-columns:1fr}
+    .contact-block{grid-template-columns:1fr}
+    .svc-btn{grid-template-columns:52px 1fr 46px;gap:14px}
+    .svc-tag{display:none}
+    .svc-panel{padding-left:6px}
+    .nav-toggle{display:inline-flex}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#0a0a0c;flex-direction:column;align-items:stretch;padding:10px 18px 16px;border-bottom:1px solid var(--line)}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 4px;font-size:13px}
+    .nav-links a.cta{margin-left:0;text-align:center}
+    section{padding-top:76px}
+    .collage .col-tile{grid-column:span 3 !important}
+    .journey-row{grid-template-columns:1fr !important;gap:6px}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 18px}
+    body{font-size:16px}
+    .hero{padding-top:40px}
+    .work-media img{height:250px}
+    .work-media.cream img{height:240px}
+    .gallery{grid-template-columns:1fr}
+    .verticals{grid-template-columns:1fr}
+    .film-panel{grid-template-columns:1fr}
+    .proof-grid{grid-template-columns:1fr}
+    .proof-cell{border-right:0;border-bottom:1px solid var(--line)}
+    .proof-cell:last-child{border-bottom:0}
+    .form-grid{grid-template-columns:1fr}
+    .collage .col-tile{grid-column:span 6 !important}
+    .float-chip{display:none}
+    .reel-stage{aspect-ratio:4/3}
+    .marquee-track{animation:none;flex-wrap:wrap;width:100%}
+    .marquee-track span{white-space:normal}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    .hero-line > span{animation:none}
+    .marquee-track{animation:none}
+    .reveal{opacity:1;transform:none}
+    .anim{opacity:1 !important;transform:none !important}
+    .work-media,.reel-inner{opacity:1 !important;transform:none !important}
+    .cursor-dot,.cursor-ring{display:none !important}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to selected work</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-mark">YASH<i>.</i></div>
+  <div class="preloader-bar"><i></i></div>
+  <div class="preloader-label">Pune, India &middot; Portfolio</div>
+</div>
+<nav aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="nav-mark" href="#top">YASH DASHRATH<i>.</i></a>
+    <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">What I Do</a>
+      <a href="#work">Work</a>
+      <a href="#showreel">Showreel</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="cta">Contact</a>
+    </div>
+  </div>
+</nav>
+<main id="top">
+
+  <!-- 01 HERO -->
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-status"><i></i> Open to internships and collaborations</p>
+        <h1>
+          <span class="hero-line"><span>Hi, I'm</span></span>
+          <span class="hero-line"><span><span class="yash">Yash</span><span class="dot">.</span></span></span>
+        </h1>
+        <p class="hero-claim">I build things. I create <span class="serif">stories.</span> I explore <em>what's possible.</em></p>
+        <p class="hero-intro">A computer science student exploring the intersection of technology, visual storytelling and creative experimentation.</p>
+        <div class="hero-actions">
+          <a class="btn violet magnetic" href="#work">Explore My Work</a>
+          <a class="btn ghost magnetic" href="https://yashdashrath18.github.io/harvest-lane/3d/" target="_blank" rel="noopener">Play Harvest Lane 3D</a>
+        </div>
+        <div class="hero-social" aria-label="Social links">
+          <a href="https://github.com/yashdashrath18" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/yash-dashrath" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://x.com/yashdashrath" target="_blank" rel="noopener">X</a>
+        </div>
+        <p class="hero-meta"><b>Yash Dashrath</b> &middot; Pune, India<br />B.Tech Computer Science, NMIET &middot; Yash MediaWorks &middot; @shotbyyassh</p>
+      </div>
+      <div class="stage" id="stage">
+        <span class="float-chip chip-a" data-depth="18">Code <b>&lt;/&gt;</b></span>
+        <span class="float-chip chip-b" data-depth="26">Camera <b>REC</b></span>
+        <span class="float-chip chip-c" data-depth="14">Edit <b>Timeline</b></span>
+        <div class="stage-frame" id="stageFrame" aria-label="Stylised 3D character portrait of a young creator in a violet hoodie holding a vintage camera, with headphones around his neck, against a dark background with violet rim light.">
+          <img src="assets/character-3d.webp" alt="Stylised 3D character portrait of a young creator in a violet hoodie holding a vintage camera, with headphones around his neck, against a dark background with violet rim light" width="1600" height="1600" fetchpriority="high" />
+          <div class="stage-cap"><span>Stylised 3D character <b>rendered portrait</b></span><span>Move to tilt</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><i></i><a href="#about">About Yash</a><span>01 / 10</span></div>
+  </header>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Development <b>&middot;</b> Visual Storytelling <b>&middot;</b> Photography <b>&middot;</b> Creative Design <b>&middot;</b> Experimentation <b>&middot;</b> Pune, India <b>&middot;</b></span>
+      <span>Development <b>&middot;</b> Visual Storytelling <b>&middot;</b> Photography <b>&middot;</b> Creative Design <b>&middot;</b> Experimentation <b>&middot;</b> Pune, India <b>&middot;</b></span>
+    </div>
+  </div>
+
+  <!-- 02 ABOUT -->
+  <section id="about" class="wrap reveal" aria-labelledby="about-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>02</b> / About me</p>
+        <h2 id="about-heading">More than just<br />a <span class="serif">developer.</span></h2>
+      </div>
+      <p class="sec-note">A camera in one hand, an endless list of ideas in the other. The work in Section 04 is the evidence for the words below.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>I'm Yash, a computer science student with a camera in one hand and an endless list of ideas in the other.</p>
+        <p class="small">I enjoy experimenting with technology, building digital experiences, capturing moments and turning random ideas into something real.</p>
+        <p class="small">From writing code to editing cinematic footage, I love exploring different ways to create. I am learning in public, shipping early, testing what I build, and improving it in the open. I am presented here as an ambitious emerging creative technologist, not as a senior engineer or an established agency owner.</p>
+      </div>
+      <dl class="about-facts">
+        <div><dt>Based in</dt><dd>Pune, Maharashtra, India</dd></div>
+        <div><dt>Studying</dt><dd>B.Tech, Computer Science, NMIET, Talegaon</dd></div>
+        <div><dt>Brands</dt><dd>Yash MediaWorks &middot; @shotbyyassh</dd></div>
+        <div><dt>Position</dt><dd>Curious, experimental, building in public</dd></div>
+      </dl>
+    </div>
+    <div class="interests" aria-label="Interests">
+      <div class="interest"><span><i>01</i> / Make</span><b>Software Development</b></div>
+      <div class="interest"><span><i>02</i> / Build</span><b>Creative Technology</b></div>
+      <div class="interest"><span><i>03</i> / See</span><b>Photography</b></div>
+      <div class="interest"><span><i>04</i> / Film</span><b>Cinematography</b></div>
+      <div class="interest"><span><i>05</i> / Cut</span><b>Video Editing</b></div>
+      <div class="interest"><span><i>06</i> / Design</span><b>UI/UX Design</b></div>
+      <div class="interest"><span><i>07</i> / Play</span><b>Gaming</b></div>
+      <div class="interest"><span><i>08</i> / Try</span><b>Experimentation</b></div>
+    </div>
+  </section>
+
+  <!-- 03 WHAT I DO -->
+  <section id="services" class="wrap reveal" aria-labelledby="services-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>03</b> / What I do</p>
+        <h2 id="services-heading">Things I love<br /><span class="serif">creating.</span></h2>
+      </div>
+      <p class="sec-note">Five practices, one person. Open each one to see what it covers. Hover and click are both supported.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="services">
+      <div class="svc">
+        <button class="svc-btn" type="button" aria-expanded="true" aria-controls="svc-1" id="svc-btn-1"><span class="svc-num">01</span><span class="svc-title">Develop<em>ment</em></span><span class="svc-tag">Websites, applications, software experiments and interactive experiences</span><span class="svc-plus" aria-hidden="true">+</span></button>
+        <div class="svc-panel open" id="svc-1" role="region" aria-labelledby="svc-btn-1"><p><strong>Building websites, applications, software experiments and interactive digital experiences.</strong> The proof is live: a playable 3D game and a working shared-living app, both with automated tests.</p><p class="mono">Evidence <b>&rarr;</b> RoomSync &middot; Harvest Lane 3D &middot; Student Management System</p></div>
+      </div>
+      <div class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-2" id="svc-btn-2"><span class="svc-num">02</span><span class="svc-title">Visual <em>storytelling</em></span><span class="svc-tag">Cinematic editing, colour grading, creative direction and storytelling</span><span class="svc-plus" aria-hidden="true">+</span></button>
+        <div class="svc-panel" id="svc-2" role="region" aria-labelledby="svc-btn-2"><p><strong>Cinematic video editing, colour grading, creative direction and storytelling.</strong> Short-form editing for YouTube creators, campus media at GDGoC NMIET, and personal visual stories under @shotbyyassh.</p><p class="mono">Tools <b>&rarr;</b> Premiere Pro &middot; After Effects &middot; DaVinci Resolve &middot; CapCut</p></div>
+      </div>
+      <div class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-3" id="svc-btn-3"><span class="svc-num">03</span><span class="svc-title">Photo<em>graphy</em></span><span class="svc-tag">Architecture, landscapes, lifestyle and cinematic moments</span><span class="svc-plus" aria-hidden="true">+</span></button>
+        <div class="svc-panel" id="svc-3" role="region" aria-labelledby="svc-btn-3"><p><strong>Capturing architecture, landscapes, lifestyle and cinematic moments.</strong> Photography and cinematography as @shotbyyassh, including brand collaborations. The photographs themselves live on Instagram, and no stock photographs are substituted for them here.</p><p class="mono">See it <b>&rarr;</b> instagram.com/shotbyyassh</p></div>
+      </div>
+      <div class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-4" id="svc-btn-4"><span class="svc-num">04</span><span class="svc-title">Creative <em>design</em></span><span class="svc-tag">Visual identity, digital graphics, layouts and creative concepts</span><span class="svc-plus" aria-hidden="true">+</span></button>
+        <div class="svc-panel" id="svc-4" role="region" aria-labelledby="svc-btn-4"><p><strong>Visual identity, digital graphics, layouts and creative concepts.</strong> Graphic design, social layouts and identity work, including the handwritten Yash MediaWorks logo. Consulting comes first: audit the profile, then design around a strategy.</p><p class="mono">Tools <b>&rarr;</b> Photoshop &middot; Illustrator &middot; Canva</p></div>
+      </div>
+      <div class="svc">
+        <button class="svc-btn" type="button" aria-expanded="false" aria-controls="svc-5" id="svc-btn-5"><span class="svc-num">05</span><span class="svc-title">Experi<em>mentation</em></span><span class="svc-tag">AI tools, automation, emerging technology and unconventional ideas</span><span class="svc-plus" aria-hidden="true">+</span></button>
+        <div class="svc-panel" id="svc-5" role="region" aria-labelledby="svc-btn-5"><p><strong>Exploring AI tools, automation, emerging technology and unconventional ideas.</strong> Hardware that senses the real world, game economies balanced with a simulator, and AI-assisted workflows used as a tool inside a human-directed build.</p><p class="mono">Evidence <b>&rarr;</b> Laser Security System &middot; Harvest Lane economy &middot; Experiments</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SELECTED WORK -->
+  <section id="work" class="wrap reveal" aria-labelledby="work-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>04</b> / Selected work</p>
+        <h2 id="work-heading">A few things<br />I've <span class="violet-word">made.</span></h2>
+      </div>
+      <p class="sec-note">Large previews, honest statuses, real links. No screenshot is fabricated: where no supplied screenshot exists, the preview is a clearly labelled diagram or type panel.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="work-grid12">
+      <article class="work-item span7">
+        <div class="work-pad">
+          <p class="work-meta"><span class="num">Project 01</span><span class="status">Live &middot; In pilot use</span><span>App &middot; 2026</span></p>
+          <h3 class="work-title">RoomSync <span class="serif">/ Shared Living</span></h3>
+          <p class="work-lede">A shared-living management concept designed to simplify expense splitting, household responsibilities and coordination between flatmates.</p>
+        </div>
+        <div class="work-media tall"><img src="assets/shared-living-home.png" alt="Shared Living home screen on a phone, showing a balance owed, Sunday household tasks, and recent expenses" width="780" height="2330" loading="lazy" /><span class="view-tag">Live PWA</span></div>
+        <div class="tags"><span>React</span><span>TypeScript</span><span>PWA</span><span>Paise-safe splits</span></div>
+        <div class="work-links"><a class="btn violet" href="https://spring-river-3c94.yash-dashrath01.workers.dev/" target="_blank" rel="noopener">Open the live app</a></div>
+        <button class="case-btn" type="button" aria-expanded="false" aria-controls="case-room">Project details</button>
+        <div class="case-panel" id="case-room"><p><b>Idea</b>A flat needs one trusted record for money and chores: who paid, who owes whom, and whose turn it is to clean.</p><p><b>How it works</b>Equal, exact, weighted and percentage splits in paise, simplified balances, settlements only the recipient confirms, and weekly plus one-time tasks with a deterministic rotation. 77 automated tests cover splits, balances and tasks.</p><p><b>Status</b>Live as a progressive web app, in pilot use in one flat. No user counts or usage claims are made here.</p></div>
+      </article>
+
+      <article class="work-item span5">
+        <div class="work-pad">
+          <p class="work-meta"><span class="num">Project 02</span><span class="status dev">College project</span><span>Code &middot; 2026</span></p>
+          <h3 class="work-title">Student Management <span class="serif">System</span></h3>
+          <p class="work-lede">A student management application developed as a software project, with a collaborator, for CSE coursework.</p>
+        </div>
+        <div class="work-media"><div class="code-panel" aria-hidden="true"><span class="dim">// Student Management System</span>
+<span class="key">class</span> Student {
+  std::string name;
+  <span class="key">double</span> cgpa; <span class="dim">// validated</span>
+};
+std::vector&lt;Student&gt; students;
+<span class="dim">// add · search · update · delete</span>
+<span class="dim">// save to students.txt · average CGPA</span></div></div>
+        <div class="tags"><span>C++</span><span>OOP</span><span>File persistence</span></div>
+        <div class="work-links"><a class="btn ghost" href="https://github.com/yashdashrath18/Student-Management-System-" target="_blank" rel="noopener">View the repository</a></div>
+        <button class="case-btn" type="button" aria-expanded="false" aria-controls="case-student">Project details</button>
+        <div class="case-panel" id="case-student"><p><b>Idea</b>Build a coursework record system properly: a Student class, a vector of records, full create, read, update and delete operations, CGPA validation, and file persistence through students.txt.</p><p><b>Built with</b>Tanmay Gunjal, for CSE A coursework. No grade or mark is claimed here.</p></div>
+      </article>
+
+      <article class="work-item span5">
+        <div class="work-pad">
+          <p class="work-meta"><span class="num">Project 03</span><span class="status">Active practice</span><span>Creative &middot; Ongoing</span></p>
+          <h3 class="work-title">Creative <span class="serif">Media</span></h3>
+          <p class="work-lede">A collection of cinematic videos, photography and visual experiments, published as @shotbyyassh.</p>
+        </div>
+        <div class="work-media"><div class="film-panel" aria-label="Diagram of three film frames labelled Cinematic, Photo and Edit. No photographs are shown here.">
+          <div class="film-frame"><span>Frame 01</span><b>Cinematic</b></div>
+          <div class="film-frame"><span>Frame 02</span><b>Photo</b></div>
+          <div class="film-frame"><span>Frame 03</span><b>Edit</b></div>
+        </div></div>
+        <div class="tags"><span>Video</span><span>Photography</span><span>Colour grading</span><span>@shotbyyassh</span></div>
+        <div class="work-links"><a class="btn violet" href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener">See @shotbyyassh</a></div>
+        <button class="case-btn" type="button" aria-expanded="false" aria-controls="case-media">Project details</button>
+        <div class="case-panel" id="case-media"><p><b>What it is</b>Photography, cinematography and visual storytelling, including brand collaborations and freelance shooting, editing, design and marketing.</p><p><b>Honesty note</b>No original photographs were supplied for this page, so no photographs are shown here and no stock images stand in for them. The work itself is on Instagram, linked above.</p></div>
+      </article>
+
+      <article class="work-item span7">
+        <div class="work-pad">
+          <p class="work-meta"><span class="num">Project 04</span><span class="status">Live</span><span>Game &middot; 2026</span></p>
+          <h3 class="work-title">Game Development <span class="serif">/ Harvest Lane 3D</span></h3>
+          <p class="work-lede">Experimental game development projects exploring gameplay mechanics, interface design and interactive experiences. Harvest Lane 3D is the named, playable game.</p>
+        </div>
+        <div class="work-media"><img src="assets/harvest-lane-3d.png" alt="Harvest Lane 3D gameplay: fenced corn fields, chickens, cows, and a farmer character in a bright 3D farm, with a mission to harvest 30 corn" width="1280" height="720" loading="lazy" /><span class="view-tag">Playable now</span></div>
+        <div class="tags"><span>Three.js</span><span>TypeScript</span><span>Levels to 50</span><span>67 tests</span></div>
+        <div class="work-links"><a class="btn violet" href="https://yashdashrath18.github.io/harvest-lane/3d/" target="_blank" rel="noopener">Play the game</a><a class="btn ghost" href="https://github.com/yashdashrath18/harvest-lane" target="_blank" rel="noopener">View code</a></div>
+        <button class="case-btn" type="button" aria-expanded="false" aria-controls="case-game">Project details</button>
+        <div class="case-panel" id="case-game"><p><b>Idea</b>An original browser farming and market tycoon: grow crops, raise animals, serve a customer queue, complete missions and endless contracts, and work toward the Grand Hotel.</p><p><b>Process</b>Built phase by phase for browser play, with hens and cows in tiers, shops, upgrades, outfits and helpers, an economy simulator for balancing, save migration, a Reduce Motion setting and a particle cap.</p><p><b>Status</b>Live and playable at the link above, and still being developed. No player counts, downloads or revenue are claimed.</p></div>
+      </article>
+
+      <article class="work-item span6">
+        <div class="work-pad">
+          <p class="work-meta"><span class="num">Project 05</span><span class="status">Active practice</span><span>Creative &middot; Since Aug 2025</span></p>
+          <h3 class="work-title">Yash <span class="serif">MediaWorks</span></h3>
+          <p class="work-lede">My creative media and digital production identity, for Pune small and medium businesses. Consulting first, then production.</p>
+        </div>
+        <div class="work-media cream"><img src="assets/mediaworks-logo.png" alt="Yash MediaWorks logo: the word yash in handwritten lettering above MEDIAWORKS" width="1712" height="1232" loading="lazy" /></div>
+        <div class="tags"><span>Video editing</span><span>Design</span><span>Social strategy</span></div>
+        <div class="work-links"><a class="btn ghost" href="https://www.linkedin.com/in/yash-dashrath" target="_blank" rel="noopener">Discuss a project on LinkedIn</a></div>
+        <button class="case-btn" type="button" aria-expanded="false" aria-controls="case-mw">Project details</button>
+        <div class="case-panel" id="case-mw"><p><b>Method</b>First, fix the profile. Then, grow it. A profile audit, improvement, strategy, content ideas and plans, followed by editing, design and marketing.</p><p><b>Honesty note</b>There is no real client proof work to show yet. Concept and demonstration posts are labelled as such, and team size is not stated in client copy. There is no separate MediaWorks website yet.</p></div>
+      </article>
+
+      <article class="work-item span6">
+        <div class="work-pad">
+          <p class="work-meta"><span class="num">Project 06</span><span class="status dev">Built project</span><span>Experiments &middot; 2026</span></p>
+          <h3 class="work-title">Experi<em class="serif">ments</em></h3>
+          <p class="work-lede">A collection of experimental digital concepts, AI workflows and creative technology explorations, including hardware that senses the real world.</p>
+        </div>
+        <div class="work-media"><div class="beam-panel" aria-label="Diagram of a laser security system: a laser emitter, a beam, and a sensor"><div class="beam"><span>LASER</span><i></i><span>SENSOR</span></div><p style="margin:0;color:var(--muted);font-size:15px">When the beam is interrupted, the system responds. Built with Arduino and electronics, alongside the code.</p><p class="mono" style="margin:0;font-size:12px;letter-spacing:.14em;color:var(--accent2);font-weight:600">ARDUINO &middot; ELECTRONICS &middot; AI WORKFLOWS</p></div></div>
+        <div class="tags"><span>Arduino</span><span>AI tools</span><span>Automation</span><span>Creative coding</span></div>
+        <div class="work-links"><a class="btn ghost" href="#contact">Ask about an experiment</a></div>
+        <button class="case-btn" type="button" aria-expanded="false" aria-controls="case-exp">Project details</button>
+        <div class="case-panel" id="case-exp"><p><b>Laser Security System</b>An Arduino-based laser security system, built as a hands-on electronics project: wiring, alignment, sensing thresholds, and a response that triggers only when the beam is broken.</p><p><b>Other experiments</b>AI-assisted workflows used as a tool inside human-directed builds, automation ideas, and creative coding. No photograph of the hardware is on file for this page, so none is shown.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 05 SHOWREEL -->
+  <section id="showreel" class="wrap reveal" aria-labelledby="showreel-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>05</b> / Creative showreel</p>
+        <h2 id="showreel-heading">My world,<br />through <span class="serif">my lens.</span></h2>
+      </div>
+      <p class="sec-note">A cinematic gallery that points to the real work. No supplied photographs or videos were available for this page, so nothing here pretends to be one.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="reel-stage">
+      <div class="reel-inner">
+        <p class="kicker">Showreel &middot; @shotbyyassh</p>
+        <h3>Through<br /><span class="serif">my lens.</span></h3>
+        <p class="sub">The full-width showreel, vertical reels and photographs live on Instagram. This frame is the doorway to them, not a substitute video.</p>
+        <a class="play-btn" href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener"><i>&#9654;</i> Watch on Instagram</a>
+      </div>
+    </div>
+    <div class="gallery" aria-label="Photography categories">
+      <button class="g-tile" type="button" data-lightbox-title="Architecture" data-lightbox-text="Architecture photographs by Yash, published as @shotbyyassh. No original photograph was supplied for this page, so this tile opens Instagram, where the work lives."><figure style="margin:0"><div class="g-frame"><span class="cat">Photography</span><span class="num">01</span><b>Architecture</b></div><figcaption><b>Lines, light and structure.</b> View the photographs on Instagram.</figcaption></figure></button>
+      <button class="g-tile" type="button" data-lightbox-title="Landscapes" data-lightbox-text="Landscape photographs by Yash, published as @shotbyyassh. No original photograph was supplied for this page, so this tile opens Instagram, where the work lives."><figure style="margin:0"><div class="g-frame"><span class="cat">Photography</span><span class="num">02</span><b>Landscapes</b></div><figcaption><b>Open ground and changing light.</b> View the photographs on Instagram.</figcaption></figure></button>
+      <button class="g-tile" type="button" data-lightbox-title="Lifestyle" data-lightbox-text="Lifestyle photographs by Yash, published as @shotbyyassh. No original photograph was supplied for this page, so this tile opens Instagram, where the work lives."><figure style="margin:0"><div class="g-frame"><span class="cat">Photography</span><span class="num">03</span><b>Lifestyle</b></div><figcaption><b>People and ordinary moments.</b> View the photographs on Instagram.</figcaption></figure></button>
+      <button class="g-tile" type="button" data-lightbox-title="Cinematic" data-lightbox-text="Cinematic work by Yash, published as @shotbyyassh. No original still was supplied for this page, so this tile opens Instagram, where the work lives."><figure style="margin:0"><div class="g-frame"><span class="cat">Film</span><span class="num">04</span><b>Cinematic</b></div><figcaption><b>Frames that belong to a sequence.</b> View the work on Instagram.</figcaption></figure></button>
+      <button class="g-tile" type="button" data-lightbox-title="Street" data-lightbox-text="Street photographs by Yash, published as @shotbyyassh. No original photograph was supplied for this page, so this tile opens Instagram, where the work lives."><figure style="margin:0"><div class="g-frame"><span class="cat">Photography</span><span class="num">05</span><b>Street</b></div><figcaption><b>The city, unposed.</b> View the photographs on Instagram.</figcaption></figure></button>
+      <button class="g-tile" type="button" data-lightbox-title="Experimental" data-lightbox-text="Experimental visual work by Yash, published as @shotbyyassh. No original image was supplied for this page, so this tile opens Instagram, where the work lives."><figure style="margin:0"><div class="g-frame"><span class="cat">Experiments</span><span class="num">06</span><b>Experimental</b></div><figcaption><b>Tests, textures and new tools.</b> View the work on Instagram.</figcaption></figure></button>
+    </div>
+    <div class="grade">
+      <div class="grade-head">
+        <h3>Before / After <span class="serif">colour grading</span></h3>
+        <p>Drag the handle. This is a tonal diagram of what grading does to an image, not a photograph. Real before and after pairs will be added when original photographs are supplied.</p>
+      </div>
+      <div class="grade-compare" id="gradeCompare" role="slider" aria-label="Colour grading comparison diagram" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+        <div class="grade-flat">Before &middot; flat, ungraded tones</div>
+        <div class="grade-graded" id="gradeGraded">After &middot; graded, cinematic tones</div>
+        <div class="grade-handle" id="gradeHandle"><i>&harr;</i></div>
+      </div>
+      <p class="grade-note">Grading used in Yash's editing work: contrast, colour balance and tone, applied in DaVinci Resolve and Premiere Pro.</p>
+    </div>
+    <div class="verticals" aria-label="Vertical video previews">
+      <a class="v-tile" href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener"><span>Vertical &middot; <i>9:16</i></span><b>Reels and short-form film</b><span>Watch &rarr;</span></a>
+      <a class="v-tile" href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener"><span>Vertical &middot; <i>9:16</i></span><b>Behind the shot</b><span>Watch &rarr;</span></a>
+      <a class="v-tile" href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener"><span>Vertical &middot; <i>9:16</i></span><b>Edits and colour</b><span>Watch &rarr;</span></a>
+    </div>
+  </section>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-box">
+      <button class="lightbox-close" type="button" id="lightbox-close">Close</button>
+      <h3 id="lightbox-title">Title</h3>
+      <p id="lightbox-text">Text</p>
+      <a class="btn violet" href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener">View on Instagram</a>
+    </div>
+  </div>
+
+  <!-- 06 TOOLBOX -->
+  <section id="toolbox" class="wrap reveal" aria-labelledby="toolbox-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>06</b> / Experience and toolkit</p>
+        <h2 id="toolbox-heading">My creative<br /><span class="serif">toolbox.</span></h2>
+      </div>
+      <p class="sec-note">An interactive ecosystem, not progress bars. Select a tool to see where it was actually used. No proficiency percentages are invented.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="toolbox">
+      <div class="tool-groups">
+        <div class="tool-group">
+          <h3>Development</h3>
+          <p>Languages used in shipped work, coursework and hardware builds.</p>
+          <div class="chips">
+            <button class="chip active" type="button" data-tool="Python" data-detail="Used for programming and software experimentation, alongside college work in Python and C++.">Python</button>
+            <button class="chip" type="button" data-tool="C++" data-detail="Used for the Student Management System, with object-oriented design and file persistence, and for Arduino-style embedded logic.">C++</button>
+            <button class="chip" type="button" data-tool="HTML" data-detail="Used for every live build on this page, including Harvest Lane 3D and Shared Living, as the structure under the game and app interfaces.">HTML</button>
+            <button class="chip" type="button" data-tool="CSS" data-detail="Used for the design of this portfolio and of the live builds, including responsive layouts and the Shared Living redesign.">CSS</button>
+            <button class="chip" type="button" data-tool="JavaScript" data-detail="Used for interactive web work and game development, including the browser games and the interactive sections of this page.">JavaScript</button>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Creative software</h3>
+          <p>Used for client-style work, campus media and personal pages.</p>
+          <div class="chips">
+            <button class="chip" type="button" data-tool="Adobe Premiere Pro" data-detail="Used for short-form video editing for YouTube creators and for Yash MediaWorks editing work.">Adobe Premiere Pro</button>
+            <button class="chip" type="button" data-tool="DaVinci Resolve" data-detail="Used for colour grading and editing, including the grading approach described in the showreel section.">DaVinci Resolve</button>
+            <button class="chip" type="button" data-tool="After Effects" data-detail="Used for motion work and visual effects inside video editing for Yash MediaWorks and freelance projects.">After Effects</button>
+            <button class="chip" type="button" data-tool="Photoshop" data-detail="Used for graphic design and image work across Yash MediaWorks, campus media and personal pages.">Photoshop</button>
+            <button class="chip" type="button" data-tool="Illustrator" data-detail="Used for vector and identity design work, alongside Photoshop and Canva layouts.">Illustrator</button>
+            <button class="chip" type="button" data-tool="CapCut" data-detail="Used for short-form video editing, including quick-turnaround edits for social and creator work.">CapCut</button>
+          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Technology</h3>
+          <p>Approaches that shape how the work gets done.</p>
+          <div class="chips">
+            <button class="chip" type="button" data-tool="AI tools" data-detail="Used as a tool inside human-directed builds and creative workflows, not as the author of the work. Applied in game balancing, automation ideas and content planning.">AI tools</button>
+            <button class="chip" type="button" data-tool="Automation" data-detail="Explored for repetitive creative and technical workflows, including test suites that check builds automatically before they ship.">Automation</button>
+            <button class="chip" type="button" data-tool="Creative coding" data-detail="Used for interactive experiments and browser builds, including the Three.js game world and the interactive elements of this portfolio.">Creative coding</button>
+            <button class="chip" type="button" data-tool="Software experimentation" data-detail="The habit behind the whole page: build a small working thing, test it, and learn from the result, from Arduino builds to web apps.">Software experimentation</button>
+          </div>
+        </div>
+      </div>
+      <aside class="readout" aria-live="polite">
+        <span class="mono">Selected tool</span>
+        <h3 id="tool-name">Python</h3>
+        <p id="tool-detail">Used for programming and software experimentation, alongside college work in Python and C++.</p>
+        <p class="also"><b>Also used in shipped work:</b> TypeScript, Three.js, React, Vite, Git and GitHub, and Arduino with electronics. These appear in the project details above, where their use can be checked.</p>
+      </aside>
+    </div>
+    <div class="rule" style="margin-top:42px"></div>
+    <div class="sec-head" style="margin-bottom:24px">
+      <div>
+        <p class="sec-index"><b>06b</b> / Journey</p>
+        <h2 style="font-size:clamp(30px,4vw,48px)">Study, campus,<br /><span class="serif">and self-started work.</span></h2>
+      </div>
+      <p class="sec-note">Verified roles and dates only. Nothing here is padded into employment it was not.</p>
+    </div>
+    <div style="border-top:1px solid var(--line)">
+      <div class="journey-row" style="display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)"><span class="mono" style="font-size:13.5px;font-weight:600;color:var(--muted)">Sep 2025 &middot; Present</span><div><h3 style="font-size:21px;margin:0 0 5px">B.Tech, Computer Science Engineering</h3><p style="margin:0;color:var(--muted);font-size:15.5px">First-year student, building practical projects alongside coursework.</p></div><span style="font-weight:700;color:var(--accent2);font-size:14.5px">NMIET, Pune</span></div>
+      <div class="journey-row" style="display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)"><span class="mono" style="font-size:13.5px;font-weight:600;color:var(--muted)">May 2026 &middot; Present</span><div><h3 style="font-size:21px;margin:0 0 5px">Marketing Specialist, Multimedia Team</h3><p style="margin:0;color:var(--muted);font-size:15.5px">Video editing, cinematography, photography and social media for the campus developer community.</p></div><span style="font-weight:700;color:var(--accent2);font-size:14.5px">GDGoC NMIET</span></div>
+      <div class="journey-row" style="display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)"><span class="mono" style="font-size:13.5px;font-weight:600;color:var(--muted)">May 2026 &middot; Present</span><div><h3 style="font-size:21px;margin:0 0 5px">Photography and Cinematography</h3><p style="margin:0;color:var(--muted);font-size:15.5px">Running @shotbyyassh, including brand collaborations and freelance work.</p></div><span style="font-weight:700;color:var(--accent2);font-size:14.5px">Instagram</span></div>
+      <div class="journey-row" style="display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)"><span class="mono" style="font-size:13.5px;font-weight:600;color:var(--muted)">Jan 2026 &middot; Present</span><div><h3 style="font-size:21px;margin:0 0 5px">Freelance Creative Work</h3><p style="margin:0;color:var(--muted);font-size:15.5px">Scripting, shooting, editing, design and marketing for local businesses and creators.</p></div><span style="font-weight:700;color:var(--accent2);font-size:14.5px">Freelance</span></div>
+      <div class="journey-row" style="display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)"><span class="mono" style="font-size:13.5px;font-weight:600;color:var(--muted)">Dec 2025 &middot; Present</span><div><h3 style="font-size:21px;margin:0 0 5px">Video Editor</h3><p style="margin:0;color:var(--muted);font-size:15.5px">Short-form video editing for YouTube creators.</p></div><span style="font-weight:700;color:var(--accent2);font-size:14.5px">YouTube</span></div>
+      <div class="journey-row" style="display:grid;grid-template-columns:200px 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)"><span class="mono" style="font-size:13.5px;font-weight:600;color:var(--muted)">Aug 2025 &middot; Present</span><div><h3 style="font-size:21px;margin:0 0 5px">Founder</h3><p style="margin:0;color:var(--muted);font-size:15.5px">Yash MediaWorks: consulting-first creative services for Pune businesses.</p></div><span style="font-weight:700;color:var(--accent2);font-size:14.5px">Yash MediaWorks</span></div>
+    </div>
+  </section>
+
+  <!-- 07 ACHIEVEMENTS -->
+  <section id="proof" class="wrap reveal" aria-labelledby="proof-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>07</b> / Achievements and highlights</p>
+        <h2 id="proof-heading">Proof,<br />not <span class="serif">promises.</span></h2>
+      </div>
+      <p class="sec-note">Only numbers that can be checked in the builds themselves. No awards, certifications or audience figures are claimed.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="proof-grid">
+      <div class="proof-cell"><b><span class="counter" data-target="2">2</span></b><span>Live builds linked from this page: a playable game and a working PWA.</span></div>
+      <div class="proof-cell"><b><span class="counter" data-target="67">67</span></b><span>Automated tests in Harvest Lane 3D, covering its game systems.</span></div>
+      <div class="proof-cell"><b><span class="counter" data-target="77">77</span></b><span>Automated tests in Shared Living, covering splits, balances and tasks.</span></div>
+      <div class="proof-cell"><b><span class="counter" data-target="50">50</span></b><span>Levels in Harvest Lane 3D, with missions, contracts and the Grand Hotel.</span></div>
+    </div>
+    <div class="proof-cards">
+      <div class="proof-card"><b>Creative content, made and published</b><p>Photography, cinematography and short-form editing published as @shotbyyassh and for creators and local businesses. No view total is claimed without verified analytics.</p></div>
+      <div class="proof-card"><b>Software projects, shipped</b><p>Games, apps and coursework systems with public code or live links, built and tested in the open.</p></div>
+      <div class="proof-card"><b>Community and creative work</b><p>Multimedia work for GDGoC NMIET since May 2026, and freelance creative work since January 2026.</p></div>
+    </div>
+    <p class="proof-note"><strong>No Instagram view total is shown.</strong> A combined reel figure was previously reported, but it has not been verified against current analytics, so it is deliberately left out until it can be checked.</p>
+  </section>
+
+  <!-- 08 BEYOND -->
+  <section id="beyond" class="wrap reveal" aria-labelledby="beyond-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>08</b> / Beyond the screen</p>
+        <h2 id="beyond-heading">Always curious.<br />Always <span class="serif">exploring.</span></h2>
+      </div>
+      <p class="sec-note">Interests outside development, shown as an editorial collage. The photographs for these live on Instagram, not as substitutes here.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="collage">
+      <div class="col-tile"><span>01 / Go</span><b>Travel</b><p>New places change what the camera notices. Travel feeds the photography, and the photography remembers the travel.</p></div>
+      <div class="col-tile"><span>02 / Look</span><b>Nature</b><p>Light, weather and open ground. The subjects that reward patience and early mornings.</p></div>
+      <div class="col-tile"><span>03 / Frame</span><b>Photo<span class="serif">graphy</span></b><p>Seeing before shooting.</p></div>
+      <div class="col-tile"><span>04 / Play</span><b>Gaming</b><p>Playing games, and learning how they are built.</p></div>
+      <div class="col-tile"><span>05 / Build</span><b>Techno<span class="serif">logy</span></b><p>Tools, hardware and new ideas, tried by building.</p></div>
+      <div class="col-tile"><span>06 / Try</span><b>Experi<span class="serif">ments</span></b><p>Random ideas, turned into something real.</p></div>
+    </div>
+  </section>
+
+  <!-- 09 FAQ -->
+  <section id="faq" class="wrap reveal" aria-labelledby="faq-heading">
+    <div class="sec-head">
+      <div>
+        <p class="sec-index"><b>09</b> / FAQ</p>
+        <h2 id="faq-heading">Questions,<br /><span class="serif">answered plainly.</span></h2>
+      </div>
+      <p class="sec-note">Short answers, no padding. Anything else, use the contact form below.</p>
+    </div>
+    <div class="rule"></div>
+    <div class="faq">
+      <div class="faq-row">
+        <button class="faq-btn" type="button" aria-expanded="true" aria-controls="faq-1" id="faq-btn-1">Who is Yash?<span class="mark" aria-hidden="true">+</span></button>
+        <div class="faq-panel open" id="faq-1" role="region" aria-labelledby="faq-btn-1">Yash Dashrath is a first-year B.Tech Computer Science student at NMIET, Talegaon, Pune. He is a creative developer, photographer, cinematographer and video editor, and the founder of Yash MediaWorks. His photography identity is @shotbyyassh.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">What kind of projects do you work on?<span class="mark" aria-hidden="true">+</span></button>
+        <div class="faq-panel" id="faq-2" role="region" aria-labelledby="faq-btn-2">Games and web apps that people can actually open and use, student software, Arduino and electronics builds, and creative media: video editing, photography, cinematography and design. The selected work above shows each kind with a real link or repository.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">What technologies do you use?<span class="mark" aria-hidden="true">+</span></button>
+        <div class="faq-panel" id="faq-3" role="region" aria-labelledby="faq-btn-3">Python, C++, HTML, CSS and JavaScript for development, plus TypeScript, Three.js and React in the shipped game and app. For creative work: Premiere Pro, DaVinci Resolve, After Effects, Photoshop, Illustrator and CapCut. The toolbox section shows where each tool was used.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">Are you open to collaborations?<span class="mark" aria-hidden="true">+</span></button>
+        <div class="faq-panel" id="faq-4" role="region" aria-labelledby="faq-btn-4">Yes. Internships, collaborations, game and app ideas, and creative work for Pune businesses are all welcome. Email is the fastest route, and LinkedIn messages work too. See the contact section below.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-btn" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">Where can I see your creative work?<span class="mark" aria-hidden="true">+</span></button>
+        <div class="faq-panel" id="faq-5" role="region" aria-labelledby="faq-btn-5">Photography and cinematography are published on Instagram as <a href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener">@shotbyyassh</a>. Code and live builds are on <a href="https://github.com/yashdashrath18" target="_blank" rel="noopener">GitHub</a>, and professional updates are on <a href="https://www.linkedin.com/in/yash-dashrath" target="_blank" rel="noopener">LinkedIn</a>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 CONTACT -->
+  <section id="contact" class="wrap reveal" aria-labelledby="contact-heading">
+    <div class="sec-head"><div><p class="sec-index"><b>10</b> / Contact</p></div></div>
+    <div class="contact-block">
+      <div>
+        <h2 id="contact-heading">Let's make<br />something <span class="serif">interesting.</span></h2>
+        <p class="lede">Have an idea, an interesting project or just want to connect? My inbox is open.</p>
+        <p class="email-line"><a href="mailto:yashdashrath18@gmail.com">yashdashrath18@gmail.com</a></p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn violet magnetic" href="mailto:yashdashrath18@gmail.com">Email Yash</a><button class="btn ghost" type="button" id="copy-email">Copy email address</button></div>
+        <p id="copy-status" role="status"></p>
+      </div>
+      <ul class="social" aria-label="Profiles">
+        <li><a href="https://www.linkedin.com/in/yash-dashrath" target="_blank" rel="noopener"><span>LinkedIn</span><span>/in/yash-dashrath</span></a></li>
+        <li><a href="https://github.com/yashdashrath18" target="_blank" rel="noopener"><span>GitHub</span><span>@yashdashrath18</span></a></li>
+        <li><a href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener"><span>Instagram</span><span>@shotbyyassh</span></a></li>
+        <li><a href="https://x.com/yashdashrath" target="_blank" rel="noopener"><span>X</span><span>@YashDashrath</span></a></li>
+        <li><a href="https://www.instagram.com/shotbyyassh/" target="_blank" rel="noopener"><span>Photography portfolio</span><span>@shotbyyassh</span></a></li>
+      </ul>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <h3>Send a message</h3>
+      <p>This form opens your email app with your message addressed to Yash. Nothing is stored on this page.</p>
+      <div class="form-grid">
+        <div class="field"><label for="cf-name">Your name</label><input id="cf-name" name="name" type="text" autocomplete="name" required /></div>
+        <div class="field"><label for="cf-email">Your email</label><input id="cf-email" name="email" type="email" autocomplete="email" required /></div>
+        <div class="field full"><label for="cf-message">Your idea or project</label><textarea id="cf-message" name="message" required></textarea></div>
+      </div>
+      <div class="form-foot">
+        <button class="btn violet" type="submit">Send via email</button>
+        <p class="form-note">Or write directly to yashdashrath18@gmail.com.</p>
+      </div>
+    </form>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div><p class="foot-name">Yash Dashrath<i>.</i></p><p class="foot-quote">I build things. I create stories. I explore what's possible.</p></div>
+      <div class="foot-meta">Pune, India<br />&copy; 2026 Yash Dashrath<br />Creative developer &middot; Photographer &middot; Editor</div>
+    </div>
+    <div class="foot-big" aria-hidden="true">Yash Dashrath</div>
+    <div class="foot-bottom"><span>Games, apps, and media. Made with curiosity.</span><button class="to-top" type="button" id="to-top">Back to the top &uarr;</button></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var finePointer = window.matchMedia("(pointer: fine)").matches;
+  /* Scroll animation gate: only when the animation code itself is running,
+     with IntersectionObserver and rAF available, and reduced motion off.
+     If any of that fails, html.js-anim is never added and all content
+     stays visible via the default CSS. No CDN is involved. */
+  var animOK = !reduced && ("IntersectionObserver" in window) && ("requestAnimationFrame" in window);
+  if (animOK) { document.documentElement.classList.add("js-anim"); }
+  var pre = document.getElementById("preloader");
+  function hidePre(){ if(pre){ pre.classList.add("done"); setTimeout(function(){ if(pre.parentNode) pre.parentNode.removeChild(pre); }, 750); } }
+  if (reduced) { hidePre(); } else {
+    var preDone = false;
+    function once(){ if(!preDone){ preDone = true; hidePre(); } }
+    window.addEventListener("load", function(){ setTimeout(once, 350); });
+    setTimeout(once, 1400);
+  }
+  var progress = document.getElementById("progress");
+  var progressQueued = false;
+  function updateProgress(){ progressQueued = false; var h = document.documentElement; var max = h.scrollHeight - h.clientHeight; progress.style.transform = "scaleX(" + (max > 0 ? (h.scrollTop / max) : 0) + ")"; }
+  function queueProgress(){ if (!progressQueued) { progressQueued = true; requestAnimationFrame(updateProgress); } }
+  window.addEventListener("scroll", queueProgress, {passive:true});
+  window.addEventListener("resize", queueProgress);
+  updateProgress();
+  if (finePointer && !reduced) {
+    document.body.classList.add("has-cursor");
+    var dot = document.getElementById("cursorDot"), ring = document.getElementById("cursorRing");
+    var rx = -100, ry = -100, tx = -100, ty = -100;
+    document.addEventListener("mousemove", function(e){ tx = e.clientX; ty = e.clientY; dot.style.left = tx + "px"; dot.style.top = ty + "px"; });
+    (function loop(){ rx += (tx - rx) * 0.16; ry += (ty - ry) * 0.16; ring.style.left = rx + "px"; ring.style.top = ry + "px"; requestAnimationFrame(loop); })();
+    document.querySelectorAll("a, button").forEach(function(el){ el.addEventListener("mouseenter", function(){ ring.classList.add("is-hover"); }); el.addEventListener("mouseleave", function(){ ring.classList.remove("is-hover"); }); });
+    document.querySelectorAll(".magnetic").forEach(function(el){
+      el.addEventListener("mousemove", function(e){ var r = el.getBoundingClientRect(); el.style.transform = "translate(" + ((e.clientX - r.left - r.width/2) * 0.12) + "px," + ((e.clientY - r.top - r.height/2) * 0.18) + "px)"; });
+      el.addEventListener("mouseleave", function(){ el.style.transform = ""; });
+    });
+  }
+  var navToggle = document.getElementById("nav-toggle");
+  var navLinks = document.getElementById("nav-links");
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function(){ var open = navLinks.classList.toggle("open"); navToggle.setAttribute("aria-expanded", String(open)); navToggle.textContent = open ? "Close" : "Menu"; });
+    navLinks.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ navLinks.classList.remove("open"); navToggle.setAttribute("aria-expanded","false"); navToggle.textContent = "Menu"; }); });
+  }
+  function accordion(btns){
+    btns.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var panel = document.getElementById(btn.getAttribute("aria-controls"));
+        var isOpen = btn.getAttribute("aria-expanded") === "true";
+        btns.forEach(function(b){ b.setAttribute("aria-expanded","false"); var p = document.getElementById(b.getAttribute("aria-controls")); if (p) p.classList.remove("open"); });
+        if (!isOpen) { btn.setAttribute("aria-expanded","true"); if (panel) panel.classList.add("open"); }
+      });
+    });
+  }
+  accordion(Array.prototype.slice.call(document.querySelectorAll(".svc-btn")));
+  accordion(Array.prototype.slice.call(document.querySelectorAll(".faq-btn")));
+  document.querySelectorAll(".case-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      if (panel) panel.classList.toggle("open", !open);
+      btn.textContent = open ? "Project details" : "Close details";
+    });
+  });
+  var copyBtn = document.getElementById("copy-email");
+  var status = document.getElementById("copy-status");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var email = "yashdashrath18@gmail.com";
+    function done(){ status.textContent = "Email address copied."; copyBtn.textContent = "Copied"; setTimeout(function(){ copyBtn.textContent = "Copy email address"; }, 2200); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(email).then(done, function(){ status.textContent = "Copy did not work in this browser. The address is yashdashrath18@gmail.com."; }); }
+    else { status.textContent = "Copy is not available here. The address is yashdashrath18@gmail.com."; }
+  });
+  var topBtn = document.getElementById("to-top");
+  if (topBtn) topBtn.addEventListener("click", function(){ window.scrollTo({top:0, behavior: reduced ? "auto" : "smooth"}); });
+  /* Scroll animation: staggered fade-and-rise reveals, observed per block.
+     Stagger restarts per section so a grid reads row by row, capped so
+     later items never wait long. Elements are unobserved once revealed. */
+  function markScrollAnims(){
+    var items = [];
+    document.querySelectorAll("section.reveal").forEach(function(sec){
+      var secItems = sec.querySelectorAll(".sec-head, .rule, .about-copy, .about-facts, .interest, .svc, .work-item, .reel-stage, .g-tile, .grade, .v-tile, .tool-group, .readout, .proof-cell, .proof-card, .proof-note, .col-tile, .faq-row, .contact-block, .contact-form");
+      secItems.forEach(function(el, i){ el.classList.add("anim"); el.style.setProperty("--d", Math.min(i * 75, 450) + "ms"); items.push(el); });
+      var journey = sec.querySelector('div[style*="border-top"]');
+      if (journey) { journey.querySelectorAll(":scope > div").forEach(function(el, i){ el.classList.add("anim"); el.style.setProperty("--d", Math.min(i * 60, 300) + "ms"); items.push(el); }); }
+    });
+    document.querySelectorAll("footer .foot-top, footer .foot-big, footer .foot-bottom").forEach(function(el, i){ el.classList.add("anim"); el.style.setProperty("--d", (i * 90) + "ms"); items.push(el); });
+    return items;
+  }
+  if (animOK) {
+    var animItems = markScrollAnims();
+    /* Reveal, then drop the .anim class once the transition has run so
+       each block's own hover transitions take over again afterwards. */
+    function revealAnim(el, obs){
+      if (el.classList.contains("in")) { if (obs) obs.unobserve(el); return; }
+      el.classList.add("in");
+      if (obs) obs.unobserve(el);
+      var d = parseInt(el.style.getPropertyValue("--d"), 10) || 0;
+      setTimeout(function(){ el.classList.remove("anim"); }, d + 820);
+    }
+    var aio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { revealAnim(en.target, aio); } });
+    }, {threshold: 0.1, rootMargin: "0px 0px -6% 0px"});
+    animItems.forEach(function(el){ aio.observe(el); });
+    /* Safety net: anything already in view when the observer is set up
+       must not wait on a later callback to become visible. */
+    setTimeout(function(){
+      animItems.forEach(function(el){
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) { revealAnim(el, aio); }
+      });
+    }, 600);
+    /* Visibility fallback (guardrail 1): if a block's observer has not
+       fired within a short time, e.g. a full-page capture that never
+       scrolls, reveal everything rather than leave it at opacity 0
+       waiting for a scroll trigger that never comes. */
+    setTimeout(function(){ animItems.forEach(function(el){ revealAnim(el, aio); }); }, 2500);
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+  /* Parallax: scroll-driven, rAF + lerp, transform and --py only.
+     Hero watermark treatment: this build has no separate watermark
+     element, so the oversized hero headline itself (h1) carries the
+     subtle parallax, along with the hero portrait frame (.stage),
+     project and showreel images, and the footer outline wordmark.
+     No new element or content was added. Disabled below 700px so
+     mobile stays lightweight, and never under reduced motion
+     (animOK is false there). */
+  var parallaxTargets = [];
+  function collectParallax(){
+    parallaxTargets = [];
+    var heroTitle = document.querySelector(".hero h1");
+    if (heroTitle) parallaxTargets.push({el: heroTitle, speed: 0.04, max: 10, mode: "stage", cur: 0, tgt: 0});
+    var stage = document.getElementById("stage");
+    if (stage) parallaxTargets.push({el: stage, speed: 0.08, max: 16, mode: "stage", cur: 0, tgt: 0});
+    var reelInner = document.querySelector(".reel-inner");
+    if (reelInner) parallaxTargets.push({el: reelInner, speed: 0.05, max: 10, mode: "var", cur: 0, tgt: 0});
+    document.querySelectorAll(".work-media img").forEach(function(img){ parallaxTargets.push({el: img, speed: 0.05, max: 10, mode: "var", cur: 0, tgt: 0}); });
+    var footBig = document.querySelector(".foot-big");
+    if (footBig) parallaxTargets.push({el: footBig, speed: 0.05, max: 14, mode: "foot", cur: 0, tgt: 0});
+  }
+  function resetParallax(){
+    parallaxTargets.forEach(function(t){ t.cur = 0; t.tgt = 0; if (t.mode === "var") { t.el.style.setProperty("--py", "0px"); } else { t.el.style.transform = ""; } });
+  }
+  var parallaxRunning = false;
+  function parallaxTick(){
+    parallaxRunning = false;
+    var vh = window.innerHeight, active = false;
+    if (window.innerWidth >= 700) {
+      parallaxTargets.forEach(function(t){
+        var r = t.el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) { return; }
+        var center = r.top + r.height / 2;
+        t.tgt = Math.max(-t.max, Math.min(t.max, (vh / 2 - center) * t.speed));
+        t.cur += (t.tgt - t.cur) * 0.16;
+        if (Math.abs(t.tgt - t.cur) > 0.05) active = true;
+        var y = Math.round(t.cur * 10) / 10;
+        if (t.mode === "var") { t.el.style.setProperty("--py", y + "px"); }
+        else if (t.mode === "foot") { t.el.style.transform = "translate3d(" + (-y * 1.2) + "px," + y + "px,0)"; }
+        else { t.el.style.transform = "translate3d(0," + y + "px,0)"; }
+      });
+    } else { resetParallax(); }
+    if (active) { parallaxRunning = true; requestAnimationFrame(parallaxTick); }
+  }
+  function queueParallax(){ if (!parallaxRunning) { parallaxRunning = true; requestAnimationFrame(parallaxTick); } }
+  if (animOK) {
+    collectParallax();
+    window.addEventListener("scroll", queueParallax, {passive:true});
+    window.addEventListener("resize", queueParallax);
+    queueParallax();
+  }
+  var cio = ("IntersectionObserver" in window && !reduced) ? new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (!en.isIntersecting) return;
+      var el = en.target, target = parseInt(el.getAttribute("data-target"), 10) || 0, start = null;
+      cio.unobserve(el);
+      (function step(ts){ if (start === null) start = ts; var p = Math.min((ts - start) / 900, 1); el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); })(performance.now());
+    });
+  }, {threshold: 0.6}) : null;
+  if (cio) { document.querySelectorAll(".counter").forEach(function(el){ cio.observe(el); }); }
+  document.querySelectorAll(".chip").forEach(function(chip){
+    chip.addEventListener("click", function(){
+      document.querySelectorAll(".chip").forEach(function(c){ c.classList.remove("active"); });
+      chip.classList.add("active");
+      var name = document.getElementById("tool-name"), detail = document.getElementById("tool-detail");
+      if (name) name.textContent = chip.getAttribute("data-tool");
+      if (detail) detail.textContent = chip.getAttribute("data-detail");
+    });
+  });
+  var stage = document.getElementById("stage"), frame = document.getElementById("stageFrame");
+  if (stage && frame && !reduced) {
+    stage.addEventListener("mousemove", function(e){
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      frame.style.transform = "rotateY(" + (x * 10) + "deg) rotateX(" + (-y * 7) + "deg)";
+      stage.querySelectorAll(".float-chip").forEach(function(chip){
+        var d = parseFloat(chip.getAttribute("data-depth") || "16");
+        chip.style.transform = "translate(" + (-x * d) + "px," + (-y * d) + "px)";
+      });
+    });
+    stage.addEventListener("mouseleave", function(){
+      frame.style.transform = "";
+      stage.querySelectorAll(".float-chip").forEach(function(chip){ chip.style.transform = ""; });
+    });
+  }
+  var grade = document.getElementById("gradeCompare"), graded = document.getElementById("gradeGraded"), handle = document.getElementById("gradeHandle");
+  function setGrade(pct){
+    pct = Math.max(2, Math.min(98, pct));
+    if (graded) graded.style.clipPath = "inset(0 0 0 " + pct + "%)";
+    if (handle) handle.style.left = pct + "%";
+    if (grade) grade.setAttribute("aria-valuenow", String(Math.round(pct)));
+  }
+  if (grade) {
+    var dragging = false;
+    function fromEvent(e){
+      var r = grade.getBoundingClientRect();
+      var cx = (e.touches ? e.touches[0].clientX : e.clientX);
+      setGrade((cx - r.left) / r.width * 100);
+    }
+    grade.addEventListener("pointerdown", function(e){ dragging = true; fromEvent(e); });
+    window.addEventListener("pointermove", function(e){ if (dragging) fromEvent(e); });
+    window.addEventListener("pointerup", function(){ dragging = false; });
+    grade.addEventListener("keydown", function(e){
+      var cur = parseInt(grade.getAttribute("aria-valuenow"), 10) || 50;
+      if (e.key === "ArrowLeft") { setGrade(cur - 5); e.preventDefault(); }
+      if (e.key === "ArrowRight") { setGrade(cur + 5); e.preventDefault(); }
+    });
+  }
+  var lightbox = document.getElementById("lightbox"), lbTitle = document.getElementById("lightbox-title"), lbText = document.getElementById("lightbox-text"), lbClose = document.getElementById("lightbox-close");
+  document.querySelectorAll(".g-tile").forEach(function(tile){
+    tile.addEventListener("click", function(){
+      if (lbTitle) lbTitle.textContent = tile.getAttribute("data-lightbox-title");
+      if (lbText) lbText.textContent = tile.getAttribute("data-lightbox-text");
+      if (lightbox) lightbox.classList.add("open");
+    });
+  });
+  function closeLb(){ if (lightbox) lightbox.classList.remove("open"); }
+  if (lbClose) lbClose.addEventListener("click", closeLb);
+  if (lightbox) lightbox.addEventListener("click", function(e){ if (e.target === lightbox) closeLb(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeLb(); });
+  var form = document.getElementById("contact-form");
+  if (form) form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = document.getElementById("cf-name").value.trim();
+    var email = document.getElementById("cf-email").value.trim();
+    var msg = document.getElementById("cf-message").value.trim();
+    var subject = encodeURIComponent("Portfolio enquiry from " + name);
+    var body = encodeURIComponent(msg + "\n\nFrom: " + name + " (" + email + ")");
+    var link = document.createElement("a");
+    link.href = "mailto:yashdashrath18@gmail.com?subject=" + subject + "&body=" + body;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  });
+})();
+</script>
+</body>
+</html>
